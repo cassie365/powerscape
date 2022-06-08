@@ -1,3 +1,4 @@
+import { Outlet, Link } from "react-router-dom";
 import './Home.css';
 
 function Home() {
@@ -7,10 +8,12 @@ function Home() {
         <h1>Welcome User</h1>
         <h2>Select an account to continue</h2>
         <div className="Acc-container">
-          <div className="Acc-box">
-            <h2>Account Name</h2>
-            <p>Total XP: 1,234,567</p>
-          </div>
+          <Link to="/viewaccount">
+            <div className="Acc-box">
+              <h2>Account Name</h2>
+              <p>Total XP: 1,234,567</p>
+            </div>
+          </Link>
           <div className="Acc-box">
             <h2>Account Name</h2>
             <p>Total XP: 1,234,567</p>
