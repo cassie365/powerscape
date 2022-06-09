@@ -1,1 +1,43 @@
+.mainContent {
+    border: 1px solid black;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.content {
+    border: 1px solid red;
+    padding:10px;
+    display: flex;
+    flex: 1;  
+}
+
+.mainContent h1{
+    flex: 1;
+}
+
+.col {
+    border: 1px solid blue;
+    flex:1;
+}
+
+.navbar {
+    background: #efefef;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul{
+    list-style: none;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+}
+
+.logo {
+    width: 40px;
+}
 

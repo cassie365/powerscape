@@ -1,3 +1,4 @@
+import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import './Home.css';
 
@@ -24,6 +25,8 @@ function Home() {
           </div>
         </div>
         <h2>GE Trends</h2>
+        <p></p>
+
       </header>
     </div>
   );

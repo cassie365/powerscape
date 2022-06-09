@@ -1,16 +1,15 @@
 import './App.css';
 import { Routes, Route, Link } from "react-router-dom";
 
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import NoPage from "./pages/NoPage";
-import ViewAccount from "./pages/ViewAccount";
+import Layout from "./components/Layout";
+import Home from "./components/Home";
+import NoPage from "./components/NoPage";
+import ViewAccount from "./components/ViewAccount";
 
 
 function App() {
   return (
     <div className='App'>
-      <h1>Testing</h1>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
