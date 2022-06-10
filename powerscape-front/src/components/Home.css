@@ -1,16 +1,65 @@
-.Acc-container{
+.acc-container{
     display: flex;
     flex-direction: row;
     gap: 10px;
     align-items: stretch;
-  }
+}
   
-  .Acc-box{
-    width: 200px;
-    padding: 6px 10px;
-    border: 1px grey solid;
-  }
+.acc-box{
+  width: 200px;
+  padding: 20px 32px;
+  border-radius: 10px;
+  background: #EAE9E0;
+  text-decoration: none;
+}
+
+.acc-box a:link, .acc-box a:-webkit-any-link{
+  text-decoration: none;
+  color: #776F5E;
+}
+
+.acc-box a:visited{
+  text-decoration: none;
+  color: #776F5E;
+}
+
+.acc-box p{
+  margin:0;
+  margin-top:10px;
+  color: #776F5E;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.acc-box h2{
+  margin: 0;
+  color: #5C4E2B;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.User-Screen{
+  padding: 20px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
   
-  .User-Screen{
-    padding: 20px;
+  color: #3C321C;
+}
+
+h2{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #5C4E2B;
   }

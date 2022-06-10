@@ -23,10 +23,11 @@
 }
 
 .navbar {
-    background: #efefef;
+    background: #C6C5B9;
     padding: 10px;
     display: flex;
     align-items: center;
+    color: #3C321C;
 }
 
 .navbar ul{
@@ -35,6 +36,7 @@
 
 .navbar ul li a{
     text-decoration: none;
+    color: #3C321C;
 }
 
 .logo {
