@@ -1,3 +1,4 @@
+import SkillBlock from './SkillBlock';
 import './ViewAccount.css';
 
 /*
@@ -11,27 +12,9 @@ function ViewAccount(){
             <h1>View Account</h1>
             <div className='content'>
                 <div className='col'>
+                    <h1>Current Skills</h1>
                     <div className='currentSkills'>
-                        <ul>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                            <li>Attack</li>
-                        </ul>
+                        <SkillBlock img="./images/skill_icon_attack1.gif" name="Attack" level="999"/>
                     </div>
                 </div>
                 <div className='col'>
