@@ -9,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/***
+ * An account which we want to monitor progress for. Associate with one osrs account
+ */
 @Entity
 @Table
 @Getter
@@ -18,17 +21,14 @@ public class Account {
     @Id
     @GeneratedValue
     private Long id;
-    private long userId;
     private String username;
 
-    public Account(Long id, long userId, String username) {
+    public Account(Long id, String username) {
         this.id = id;
-        this.userId = userId;
         this.username = username;
     }
 
-    public Account(long userId, String username) {
-        this.userId = userId;
+    public Account( String username) {
         this.username = username;
     }
 }
