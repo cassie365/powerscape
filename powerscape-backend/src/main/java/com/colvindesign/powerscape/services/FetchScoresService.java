@@ -50,7 +50,7 @@ public class FetchScoresService {
             "Construction"
     };
 
-    public List<Score> fetchScores(List<Account> accounts){
+    public List<Score> fetchAllScores(List<Account> accounts){
         List<Score> allScores = new ArrayList<Score>();
         for(Account a: accounts){
             try {
@@ -61,6 +61,16 @@ public class FetchScoresService {
         }
 
         return allScores;
+    }
+
+    public List<Score> fetchScores(Account account){
+        try{
+            return collectScore(account);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     public List<Score> collectScore(Account account) throws IOException {

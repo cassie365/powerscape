@@ -2,6 +2,7 @@ package com.colvindesign.powerscape.config;
 
 import com.colvindesign.powerscape.model.Account;
 import com.colvindesign.powerscape.repos.AccountRepository;
+import com.colvindesign.powerscape.services.ScheduledTasks;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -17,11 +18,12 @@ public class AccountConfig {
     private String testUser;
 
     @Bean
-    CommandLineRunner commandLineRunner(AccountRepository accountRepository){
+    CommandLineRunner commandLineRunner(AccountRepository accountRepository, ScheduledTasks scheduledTasks){
         return args -> {
             Account test1 = new Account(testUser);
 
             accountRepository.save(test1);
+            scheduledTasks.fetchAccountStats();
         };
     }
 }

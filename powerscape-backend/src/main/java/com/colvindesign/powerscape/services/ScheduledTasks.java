@@ -30,13 +30,13 @@ public class ScheduledTasks {
      * Replace current cron expression with @daily for prod
      *
      */
-    @Scheduled(cron="*/20 * * * * *")
+    @Scheduled(cron="@midnight")
     public void fetchAccountStats(){
         // Query DB for all accounts
-        List<Account> accounts = accountService.getAllAccounts();
+        List<Account> accounts = accountService.getAllTrackedAccounts();
 
         // Give accounts to fetch service to perform API calls
-        scoreService.addScores(fetchScoresService.fetchScores(accounts));
+        scoreService.addScores(fetchScoresService.fetchAllScores(accounts));
     }
 
 }

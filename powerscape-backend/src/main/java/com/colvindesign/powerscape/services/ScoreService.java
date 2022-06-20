@@ -19,9 +19,8 @@ public class ScoreService {
     public List<Score> getScoresByAccount(Long accountID){
         return scoreRepository.findAllByAccountId(accountID);
     }
-
-    //Protected method to be used only by the FetchScoresService. No direct access allowed.
-    protected void addScores (List<Score> scores){
+    
+    public void addScores (List<Score> scores){
         scoreRepository.saveAll(scores);
     }
 

@@ -26,6 +26,10 @@ public class AccountService {
         return accountRepository.findAll();
     }
 
+    public List<Account> getAllTrackedAccounts(){
+        return accountRepository.findByIsTracked(true);
+    }
+
     public Account getAccount(Long id){
         Optional<Account> account = accountRepository.findById(id);
 
