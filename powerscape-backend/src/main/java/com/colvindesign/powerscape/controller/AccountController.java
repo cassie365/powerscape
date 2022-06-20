@@ -15,7 +15,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping(path = "api/v1/account")
+@RequestMapping(path = "api/v1/accounts")
 public class AccountController {
     private final AccountService accountService;
 
