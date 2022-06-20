@@ -1,7 +1,12 @@
 package com.colvindesign.powerscape.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import com.colvindesign.powerscape.model.Account;
+import com.colvindesign.powerscape.services.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Controller which takes requests and returns account related information
@@ -12,11 +17,26 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "api/v1/account")
 public class AccountController {
-    //Add Account
+    private final AccountService accountService;
 
-    //Get Account by ID
+    @Autowired
+    public AccountController (AccountService accountService){
+        this.accountService = accountService;
+    }
 
-    //Get Accounts by user ID
+    @PostMapping
+    public void registerAccount(@RequestBody Account account){
+        accountService.addAccount(account);
+    }
 
-    //Delete an account by userID and account ID
+    @GetMapping
+    public List<Account> getAccounts(){
+        return accountService.getAllAccounts();
+    }
+
+    @GetMapping(path = "{accountId}")
+    public Account getAccount(@PathVariable("accountId") Long accountId){
+        return accountService.getAccount(accountId);
+    }
+
 }

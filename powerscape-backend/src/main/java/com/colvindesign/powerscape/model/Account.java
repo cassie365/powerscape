@@ -22,13 +22,16 @@ public class Account {
     @GeneratedValue
     private Long id;
     private String username;
+    private boolean isTracked;
 
     public Account(Long id, String username) {
         this.id = id;
         this.username = username;
+        isTracked = true;
     }
 
     public Account( String username) {
         this.username = username;
+        isTracked = true;
     }
 }
