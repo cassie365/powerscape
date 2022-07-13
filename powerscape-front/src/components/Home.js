@@ -1,25 +1,40 @@
-import React from "react";
-import { Outlet, Link } from "react-router-dom";
-import './Home.css';
+import React, { useEffect, useState } from "react";
 import AccountCard from "./AccountCard";
 
-function Home() {
+export default function Home() {
+  const [accounts, setAccounts] = useState([])
+
+  const result = () => {
+    fetch('http://localhost:8080/api/v1/accounts')
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data)
+      setAccounts(data)
+    })
+  }
+
+  useEffect(() => {
+    result()
+  }, [])
+
+  const allAccount = accounts.map(account => {
+    return(
+      <AccountCard accountName={account.username} accountXP="1111111"/>
+    )
+  })
+
   return (
-    <div className="Home">
+    <div className="main">
       <header className="User-Screen">
         <h1 className="title">Welcome User</h1>
         <h2>Select an account to continue</h2>
         <div className="acc-container">
-          <AccountCard accountName="MyskillerAccount" accountXP="1,234,567" />
-          <AccountCard accountName="MyskillerAccount" accountXP="1,234,567" />
-          <AccountCard accountName="MyskillerAccount" accountXP="1,234,567" />
+          {allAccount}
         </div>
         <h2>GE Trends</h2>
         <p></p>
 
       </header>
     </div>
-  );
+  )
 }
-
-export default Home;

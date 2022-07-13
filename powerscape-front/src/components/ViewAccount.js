@@ -1,5 +1,4 @@
 import SkillBlock from './SkillBlock';
-import './ViewAccount.css';
 
 import attackIcon from '../images/skill_icon_attack1.gif';
 import strengthIcon from '../images/skill_icon_strength1.gif';
@@ -38,6 +37,12 @@ const skills = ["Attack","Defense","Strength","Hitpoints","Ranged","Prayer","Mag
 const icons = [attackIcon,strengthIcon,defenseIcon,hitpointsIcon,rangedIcon,prayerIcon,magicIcon,cookingIcon,woodcuttingIcon,fletchingIcon,fishingIcon,firemakingIcon,
                 craftingIcon,smithingIcon,miningIcon,herbloreIcon,agilityIcon,thievingIcon,slayerIcon,farmingIcon,runecraftIcon,hunterIcon,constructionIcon];
 
+const skillBlocks = skills.map((skill,i) =>{
+    return(
+        <SkillBlock img={icons[i]} name={skill} level="99" />
+    )
+})
+
 export default function ViewAccount(){
     return(
         <div className='mainContent'>
@@ -46,7 +51,7 @@ export default function ViewAccount(){
                 <div className='col'>
                     <h1>Current Skills</h1>
                     <div className='currentSkills'>
-                        {skills.map((skill, i) => <SkillBlock img={icons[i]} name={skill} level="99" />)}
+                        {skillBlocks}
                     </div>
                 </div>
                 <div className='col'>

@@ -1,9 +1,7 @@
-import './NoPage.css';
-
-function NoPage(){
+export default function NoPage(){
     return(
-        <h1>No Page Found</h1>
+        <div className="main">
+
+        </div>
     );
 }
-
-export default NoPage;

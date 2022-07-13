@@ -99,3 +99,32 @@ color: #5C4E2B;
 .skill--lvl{
   flex: 1;
 }
+
+.Acc-container{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.Acc-box{
+  width: 200px;
+  padding: 6px 10px;
+  border: 1px grey solid;
+}
+
+.User-Screen{
+  padding: 20px;
+}
+
+.currentSkills{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 500px;
+  width: 400px;
+  align-items: center;
+  background: #EAE9E0;
+  padding: 20px;
+  border-radius: 6px;
+}

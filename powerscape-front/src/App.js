@@ -7,7 +7,7 @@ import NoPage from "./components/NoPage";
 import ViewAccount from "./components/ViewAccount";
 
 
-function App() {
+export default function App() {
   return (
     <div className='App'>
       <Routes>
@@ -20,5 +20,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
