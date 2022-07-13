@@ -8,7 +8,6 @@ export default function Home() {
     fetch('http://localhost:8080/api/v1/accounts')
     .then((response) => response.json())
     .then((data) => {
-      console.log(data)
       setAccounts(data)
     })
   }
@@ -19,7 +18,7 @@ export default function Home() {
 
   const allAccount = accounts.map(account => {
     return(
-      <AccountCard accountName={account.username} accountXP="1111111"/>
+      <AccountCard accountId={account.id} accountName={account.username} accountXP="1111111"/>
     )
   })
 

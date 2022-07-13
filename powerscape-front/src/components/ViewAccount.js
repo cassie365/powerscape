@@ -23,6 +23,7 @@ import farmingIcon from '../images/skill_icon_farming1.gif'
 import runecraftIcon from '../images/skill_icon_runecraft1.gif'
 import hunterIcon from '../images/skill_icon_hunter1.gif'
 import constructionIcon from '../images/skill_icon_construction1.gif'
+import { useLocation } from 'react-router-dom';
 
 /*
 For Current Skills, Need to decide how we want to pull current level data using api calls
@@ -44,9 +45,11 @@ const skillBlocks = skills.map((skill,i) =>{
 })
 
 export default function ViewAccount(){
+    const location = useLocation()
+    const { id } = location.state
     return(
         <div className='mainContent'>
-            <h1 className='title'>View Account</h1>
+            <h1 className='title'>View Account {id}</h1>
             <div className='content'>
                 <div className='col'>
                     <h1>Current Skills</h1>
