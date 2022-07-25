@@ -31,11 +31,11 @@ For Progress Filters, need to decide what filters to start with
 For Skill Progress section, we will want to add some fancy charts to display progress
 */
 
-const skills = ["Overall","Attack","Defense","Strength","Hitpoints","Ranged","Prayer","Magic","Cooking",
+const skills = ["Attack","Defense","Strength","Hitpoints","Ranged","Prayer","Magic","Cooking",
                 "Woodcutting","Fletching","Fishing","Firemaking","Crafting","Smithing","Mining",
                 "Herblore","Agility","Thieving","Slayer","Farming","Runecraft","Hunter","Construction"];
 
-const icons = [hitpointsIcon,attackIcon,strengthIcon,defenseIcon,hitpointsIcon,rangedIcon,prayerIcon,magicIcon,cookingIcon,woodcuttingIcon,fletchingIcon,fishingIcon,firemakingIcon,
+const icons = [attackIcon,strengthIcon,defenseIcon,hitpointsIcon,rangedIcon,prayerIcon,magicIcon,cookingIcon,woodcuttingIcon,fletchingIcon,fishingIcon,firemakingIcon,
                 craftingIcon,smithingIcon,miningIcon,herbloreIcon,agilityIcon,thievingIcon,slayerIcon,farmingIcon,runecraftIcon,hunterIcon,constructionIcon];
 
 
@@ -43,13 +43,13 @@ export default function ViewAccount(){
     const location = useLocation()
     const { id,name, scores } = location.state
 
-    const skillBlocks = scores.map((score,i) =>{
+    const skillBlocks = skills.map((skill,i) =>{
+        let s = scores.find(score => score.name == skill)
         return(
-            <SkillBlock img={icons[i]} name={score.name} level={score.level} />
+            <SkillBlock img={icons[i]} name={skill} level={s.level} />
         )
     })
 
-    console.log(scores)
     return(
         <div className='mainContent'>
             <h1 className='title'>View Account : {name}</h1>

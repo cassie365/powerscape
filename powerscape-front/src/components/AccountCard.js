@@ -4,7 +4,6 @@ import { Outlet, Link } from "react-router-dom";
 export default function AccountCard(props) {
     const [scores, setScores] = useState([])
     const scoresURL = 'http://localhost:8080/api/v1/scores/'+props.accountId
-    console.log(scoresURL)
 
     const scoresResult = () => {
       fetch(scoresURL)
@@ -17,7 +16,6 @@ export default function AccountCard(props) {
     useEffect(() => {
         scoresResult()
       }, [])
-
     return (
         <Link className="acc-box" to={"/viewaccount"} state={{ id: props.accountId, name: props.accountName , scores: scores }}>
             <h2>{ props.accountName }</h2>
